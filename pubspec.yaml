@@ -45,11 +45,15 @@ dependencies:
   camera: ^0.10.5+4
   flutter_credit_card: ^3.0.7
   intl: ^0.18.1
+  flutter_launcher_icons: ^0.13.1
+  flutter_share: ^2.0.0
+ 
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -83,8 +87,27 @@ flutter:
     - assets/animations/animation_ln200vkt.json
     - assets/images/1696242977196.jpg
     - assets/images/1696244629298.jpg
+    - assets/images/1696932759462.jpg
     #- images/a_dot_ham.jpeg animation_ln200vkt
 
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/loading_icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/loading_icon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/loading_icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/loading_icon.png"
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

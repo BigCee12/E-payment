@@ -1,6 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:epaymment/components/custom_button.dart';
-import 'package:epaymment/screens/dashboard/home/home_dashboard.dart';
+import 'package:epaymment/screens/dashboard/home/bottom_navigation_widget/bottom_navigation.dart';
+// import 'package:epaymment/screens/dashboard/home/home_dashboard.dart';
 import 'package:epaymment/screens/registration/cards/new_card/card_expiry_date.dart';
 import 'package:epaymment/screens/registration/cards/new_card/card_number_formatter.dart';
 import 'package:flutter/material.dart';
@@ -272,10 +273,10 @@ class ThreeIconButtonsWidgetState extends State<ThreeIconButtonsWidget> {
                               actions: [
                                 TextButton(
                                     onPressed: () {
-                                      Navigator.of(context).push(
+                                      Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const HomeDashboard()));
+                                                  const AppShell()));
                                     },
                                     child: const Text("Ok, I'm ready"))
                               ],

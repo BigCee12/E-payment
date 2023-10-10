@@ -146,7 +146,7 @@ class LoginAppState extends State<SignIn> {
                   ],
                 ),
                 const SizedBox(height: 90,),
-                const SignUpRow(),
+                const  SignUpRow(),
               ],
             ),
           ),

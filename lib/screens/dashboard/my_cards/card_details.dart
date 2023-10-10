@@ -26,16 +26,6 @@ class CardDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 40),
         child: Column(
           children: [
-            const Text("Tap the Card",
-              style: TextStyle(
-                color: CustomColors.elevatedButtons,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(
-              height: 14,
-            ),
             CreditCardWidget(
               // isSwipeGestureEnabled: true,
               cardType: CardType.mastercard,

@@ -1,5 +1,4 @@
-//import 'package:epaymment/screens/auth/signin_user.dart';
-import 'package:epaymment/screens/dashboard/home/home_dashboard.dart';
+import 'package:epaymment/screens/auth/signin_user.dart';
 import 'package:epaymment/screens/home/second_home_slide_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -7,7 +6,7 @@ import 'package:epaymment/constants/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeSlideScreen extends StatefulWidget {
-  const HomeSlideScreen({Key? key}) : super(key: key);
+  const HomeSlideScreen({super.key});
 
   @override
   HomeSlideScreenState createState() => HomeSlideScreenState();
@@ -114,9 +113,9 @@ class HomeSlideScreenState extends State<HomeSlideScreen> {
                   );
                 } else if (_currentPage == 1) {
                   // Navigate to the LoginScreen page (or perform any other action)
-                  Navigator.of(context).push(
+                  Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const HomeDashboard(),
+                      builder: (context) => const SignIn(),
                     ),
                   );
                 }

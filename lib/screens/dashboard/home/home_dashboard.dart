@@ -1,45 +1,17 @@
 import 'package:epaymment/constants/colors.dart';
-
 import 'package:epaymment/screens/dashboard/home/home_column_icons.dart';
 import 'package:epaymment/screens/dashboard/home/transactions.dart';
-import 'package:epaymment/screens/dashboard/my_cards/my_cards.dart';
-import 'package:epaymment/screens/home/first_home_slide_navigation.dart';
-
 import 'package:flutter/material.dart';
 
 class HomeDashboard extends StatefulWidget {
   const HomeDashboard({Key? key}) : super(key: key);
-
   @override
   State<HomeDashboard> createState() => _HomeDashboardState();
 }
 
 class _HomeDashboardState extends State<HomeDashboard> {
-  int _currentIndex = 0; // Index of the selected bottom navigation bar item
-
-
-  final List<Widget> _pages = [
-   const MyCards(),
-   const HomeSlideScreen(),
-   const MyCards(),
-   const HomeSlideScreen(),
-   const MyCards(),
-  ];
-
-
-   void _onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-    // Navigate to the selected page
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => _pages[index],
-      ),
-    );
-  }
-
-
+  
+  
   String _getFormattedDate() {
     DateTime now = DateTime.now();
     String formattedDate =
@@ -81,9 +53,8 @@ class _HomeDashboardState extends State<HomeDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 60),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 60),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -262,35 +233,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: CustomColors.elevatedButtons,
-        unselectedItemColor: Colors.grey,
-        
-        currentIndex: _currentIndex, // Current index of the selected item
-        onTap: _onTabTapped, // Callback when a tab is tapped
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card_outlined),
-            label: 'My Card',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner_outlined),
-            label: 'Scan',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_chart_sharp),
-            label: 'Activity',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined),
-            label: 'Profile',
-          ),
-        ],
-      ),
+     
     );
   }
 }

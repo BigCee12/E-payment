@@ -15,27 +15,33 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   Future<void> _mockInitialization() async {
-    await Future.delayed(const Duration(seconds: 4)); // Simulate a 2-second delay
+    await Future.delayed(
+        const Duration(seconds: 4)); // Simulate a 2-second delay
   }
+
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: FutureBuilder<void>(
-        future: _mockInitialization(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            // Once the Future completes, transition to the main content
-            return const HomeSlideScreen();
-          } else {
-            // While the Future is loading, show the loading screen
-            return const HomeScreen();
-          }
-        },
+          future: _mockInitialization(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              // Once the Future completes, transition to the main content
+              return const HomeSlideScreen();
+            } else {
+              // While the Future is loading, show the loading screen
+              return const HomeScreen();
+            }
+          },
+        ),
       ),
     );
   }
-    
-  
-  }
-
+}
