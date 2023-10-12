@@ -11,4 +11,5 @@ class CustomColors {
   static const Color elevatedButtons = Color.fromARGB(255, 20, 54, 104);
   static const Color boldTextColor = Color.fromARGB(255, 20, 54, 104);
   static const Color firstSlideTextColors = Color.fromARGB(255, 65, 62, 62);
+  static const Color textElevatedColors = Color.fromARGB(255, 58, 48, 48);
 }
