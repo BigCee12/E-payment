@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:epaymment/constants/colors.dart';
+//import 'package:epaymment/constants/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
-         CustomColors.backgroundColor, // Mixture of blue and orange
+         Colors.deepPurple, // Mixture of blue and orange
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

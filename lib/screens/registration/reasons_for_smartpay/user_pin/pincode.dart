@@ -1,4 +1,5 @@
-import 'package:epaymment/constants/colors.dart';
+import 'package:epaymment/components/custom_button.dart';
+
 import 'package:epaymment/screens/registration/facial_recognition/face_recognition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -15,21 +16,21 @@ class PinCodeWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           const Text(
+            const Text(
               "Set your PIN code",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-          const  SizedBox(height: 8.0),
-          const  Text(
+            const SizedBox(height: 8.0),
+            const Text(
               "We use state-of-the-art security measures to protect your information at all times.",
               style: TextStyle(
                 fontSize: 14,
               ),
             ),
-           const SizedBox(height: 60.0),
+            const SizedBox(height: 60.0),
             OtpTextField(
               numberOfFields: 5,
               borderColor: const Color(0xFF512DA8),
@@ -52,15 +53,12 @@ class PinCodeWidget extends StatelessWidget {
                 // );
               }, // End onSubmit
             ),
-            const SizedBox(height: 50,),
-            SizedBox(
-              width: 500,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: CustomColors.textColor,
-                  backgroundColor: CustomColors.elevatedButtons,
-                ),
-                onPressed: () {
+            const SizedBox(
+              height: 50,
+            ),
+            
+               RoundButton(
+                press: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -68,9 +66,9 @@ class PinCodeWidget extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Continue'),
+                title: 'Continue',
               ),
-            ),
+            
           ],
         ),
       ),

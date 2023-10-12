@@ -1,4 +1,5 @@
 import 'package:country_picker/country_picker.dart';
+import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/registration/reasons_for_smartpay/components/reasons_main.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,9 @@ class CountryPickerScreenState extends State<CountryPickerScreen> {
             ),
             const SizedBox(height: 16),
             SizedBox(
-              width: 500,
+              width: 400,
+              height: 60,
+
               child: ElevatedButton(
                 onPressed: () {
                   showCountryPicker(
@@ -57,25 +60,18 @@ class CountryPickerScreenState extends State<CountryPickerScreen> {
               ),
             ),
             const Spacer(), 
-            SizedBox(
-              width: 500,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: CustomColors.textColor,
-                  backgroundColor: CustomColors.elevatedButtons,
-                ),
-                onPressed: () {
+            RoundButton(
+                press: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ReasonsScreen(),
                       ),
                     );
-                
                 },
-                child: const Text('Continue'),
+                title: 'Continue',
               ),
-            ),
+            
           ],
         ),
       ),

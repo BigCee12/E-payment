@@ -1,3 +1,4 @@
+import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/auth/navigate_to_signup.dart';
 import 'package:epaymment/screens/auth/third_party_login.dart';
@@ -112,22 +113,9 @@ class LoginAppState extends State<SignIn> {
                 const SizedBox(
                   height: 15,
                 ),
-                SizedBox(
-                  width: 500,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: CustomColors.textColor,
-                      backgroundColor: CustomColors.elevatedButtons,
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Sign In',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: CustomColors.textColor,
-                      ),
-                    ),
-                  ),
+                RoundButton(
+                  press: () {},
+                  title: 'Sign In',
                 ),
                 const SizedBox(
                   height: 40.0,
@@ -145,8 +133,10 @@ class LoginAppState extends State<SignIn> {
                     GoogleOrAppleLogin(icon: Icons.ios_share),
                   ],
                 ),
-                const SizedBox(height: 90,),
-                const  SignUpRow(),
+                const SizedBox(
+                  height: 90,
+                ),
+                const SignUpRow(),
               ],
             ),
           ),

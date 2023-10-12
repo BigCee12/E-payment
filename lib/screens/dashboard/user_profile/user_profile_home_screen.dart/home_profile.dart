@@ -1,4 +1,6 @@
 import 'package:epaymment/constants/colors.dart';
+import 'package:epaymment/screens/dashboard/user_profile/account_info/account_info.dart';
+import 'package:epaymment/screens/dashboard/user_profile/general_settings/general_settings.dart';
 import 'package:epaymment/screens/dashboard/user_profile/referral_code/referral_code.dart';
 import 'package:epaymment/screens/dashboard/user_profile/user_profile_home_screen.dart/user_profile_model/user_profile_model.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +85,11 @@ class ProfileHeader extends StatelessWidget {
             icon: Icons.clear_all_rounded,
             text: "Referral Code",
           ),
-          const ProfileRow(
+          ProfileRow(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const AccountInfo()));
+            },
             iconColor: CustomColors.elevatedButtons,
             iconSize: 34,
             icon: Icons.account_circle_sharp,
@@ -115,8 +121,12 @@ class ProfileHeader extends StatelessWidget {
             icon: Icons.my_location_outlined,
             text: "Nearby List",
           ),
-          const ProfileRow(
-            iconColor: Color.fromARGB(255, 22, 182, 203),
+          ProfileRow(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const GeneralSettings()));
+            },
+            iconColor: const Color.fromARGB(255, 22, 182, 203),
             iconSize: 34,
             icon: Icons.settings,
             text: "General Settings",

@@ -1,9 +1,9 @@
+import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/screens/auth/signin_user.dart';
 import 'package:epaymment/screens/home/second_home_slide_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:epaymment/constants/colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeSlideScreen extends StatefulWidget {
   const HomeSlideScreen({super.key});
@@ -95,41 +95,26 @@ class HomeSlideScreenState extends State<HomeSlideScreen> {
               effect: const ExpandingDotsEffect(),
             ),
           ),
-          SizedBox(
-            width: 300,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: CustomColors.elevatedButtons,
-              ),
-              onPressed: () {
-                if (_currentPage == 0) {
-                  // Navigate to the next page (page 2)
-                  _pageController.animateToPage(
-                    1, // Index of the page you want to navigate to
-                    duration:
-                        const Duration(milliseconds: 400), // Animation duration
-                    curve: Curves.easeInOut, // Animation curve
-                  );
-                } else if (_currentPage == 1) {
-                  // Navigate to the LoginScreen page (or perform any other action)
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const SignIn(),
-                    ),
-                  );
-                }
-              },
-              child: Text(
-                _currentPage == 0 ? 'Get Started' : 'Next',
-                style: GoogleFonts.boogaloo(
-                  textStyle: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+          RoundButton(
+            title: _currentPage == 0 ? 'Get Started' : 'Next',
+            press: () {
+              if (_currentPage == 0) {
+                // Navigate to the next page (page 2)
+                _pageController.animateToPage(
+                  1, // Index of the page you want to navigate to
+                  duration:
+                      const Duration(milliseconds: 400), // Animation duration
+                  curve: Curves.easeInOut, // Animation curve
+                );
+              } else if (_currentPage == 1) {
+                // Navigate to the LoginScreen page (or perform any other action)
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const SignIn(),
                   ),
-                ),
-              ),
-            ),
+                );
+              }
+            },
           ),
         ],
       ),

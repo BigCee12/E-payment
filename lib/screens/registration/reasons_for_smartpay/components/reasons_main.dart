@@ -1,5 +1,5 @@
 
-import 'package:epaymment/constants/colors.dart';
+import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/screens/registration/reasons_for_smartpay/components/reasons_to_use_model.dart';
 import 'package:epaymment/screens/registration/reasons_for_smartpay/user_pin/pincode.dart';
 import 'package:flutter/material.dart';
@@ -73,14 +73,10 @@ class ReasonsScreenState extends State<ReasonsScreen> {
               ],
             ),
             const Spacer(),
-            SizedBox(
-              width: 500,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: CustomColors.textColor,
-                  backgroundColor: CustomColors.elevatedButtons,
-                ),
-                onPressed: () {
+            
+              RoundButton(
+                
+                press: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -88,9 +84,9 @@ class ReasonsScreenState extends State<ReasonsScreen> {
                     ),
                   );
                 },
-                child: const Text('Continue'),
+                title: 'Continue',
               ),
-            ),
+            
           ],
         ),
       ),

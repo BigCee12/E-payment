@@ -1,3 +1,4 @@
+import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/registration/facial_recognition/camera_config/camera_screen.dart';
 import 'package:flutter/material.dart';
@@ -47,14 +48,9 @@ class FaceRecognitionWidget extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            SizedBox(
-              width: 300,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: CustomColors.textColor,
-                  backgroundColor: CustomColors.elevatedButtons,
-                ),
-                onPressed: () {
+            
+              RoundButton(
+                press: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -62,15 +58,9 @@ class FaceRecognitionWidget extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(
-                  "Verify Identity",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
+                title: "Verify Identity",
               ),
-            )
+            
           ],
         ),
       ),

@@ -13,19 +13,27 @@ class RoundButton extends StatefulWidget {
 class _RoundButtonState extends State<RoundButton> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 500,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          foregroundColor: CustomColors.textColor,
-          backgroundColor: CustomColors.elevatedButtons,
-        ),
-        onPressed: widget.press,
-        child: Text(
-          widget.title.toString(),
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: CustomColors.textColor,
+   
+    return Padding(
+      padding: const EdgeInsets.all(13.0),
+      child: Flexible(
+        child: SizedBox(
+          width: 400,
+          height: 60,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              foregroundColor: CustomColors.textColor,
+              backgroundColor: CustomColors.elevatedButtons,
+            ),
+            onPressed: widget.press,
+            child: Text(
+              widget.title.toString(),
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: CustomColors.textColor,
+              ),
+            ),
           ),
         ),
       ),
