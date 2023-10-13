@@ -110,7 +110,9 @@ class _FAQsState extends State<FAQS> {
                   "Click the Top Up menu then select the amount of monthly and\nthe method then clikc the 'Top up now' button....",
             ),
             const Spacer(),
-            RoundButton(press: () {}, title: "Load More")
+            RoundButton(press: () {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                }, title: "Load More")
           ],
         ),
       ),
