@@ -1,6 +1,7 @@
 import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/dashboard/user_profile/account_info/account_info.dart';
 import 'package:epaymment/screens/dashboard/user_profile/change_passsword/change_password.dart';
+import 'package:epaymment/screens/dashboard/user_profile/faqs/faqs.dart';
 import 'package:epaymment/screens/dashboard/user_profile/general_settings/general_settings.dart';
 import 'package:epaymment/screens/dashboard/user_profile/referral_code/referral_code.dart';
 import 'package:epaymment/screens/dashboard/user_profile/user_profile_home_screen.dart/user_profile_model/user_profile_model.dart';
@@ -138,12 +139,19 @@ class ProfileHeader extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const ChangePassword()));
               },
-              iconColor: Color.fromARGB(255, 213, 137, 24),
+              iconColor: const Color.fromARGB(255, 50, 47, 41),
               iconSize: 34,
               icon: Icons.lock_outlined,
               text: "Change Password",
             ),
-            const ProfileRow(
+            ProfileRow(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const FAQS(),
+                  ),
+                );
+              },
               iconColor: CustomColors.elevatedButtons,
               iconSize: 34,
               icon: Icons.help_outline,

@@ -1,5 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:epaymment/components/custom_button.dart';
+import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/dashboard/home/bottom_navigation_widget/bottom_navigation.dart';
 // import 'package:epaymment/screens/dashboard/home/home_dashboard.dart';
 import 'package:epaymment/screens/registration/cards/new_card/card_expiry_date.dart';
@@ -271,19 +272,35 @@ class ThreeIconButtonsWidgetState extends State<ThreeIconButtonsWidget> {
                           builder: (BuildContext context) {
                             return AlertDialog.adaptive(
                               actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pushReplacement(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const AppShell()));
+                                RoundButton(
+                                    press: () {
+                                      Navigator.of(context).pushAndRemoveUntil(
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const AppShell(),
+                                        ),
+                                        (route) => false,
+                                      );
                                     },
-                                    child: const Text("Ok, I'm ready"))
+                                    title: "Ok, I'm ready")
                               ],
                               content: const Text(
-                                  "Now you can shop, transmit and transfer \n continentally,"),
-                              title: const Text("Great your card is ready"),
+                                "Now you can shop, transmit and transfer continentally.",
+                                style: TextStyle(
+                                  color: CustomColors.textElevatedColors,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              title: const Text(
+                                "Great your card is ready",
+                                style: TextStyle(
+                                  color: CustomColors.elevatedButtons,
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               icon: const Icon(
+                                  size: 40,
                                   Icons.account_balance_wallet_outlined),
                             );
                           });

@@ -1,6 +1,5 @@
 import 'package:epaymment/components/custom_button.dart';
 import 'package:epaymment/constants/colors.dart';
-import 'package:epaymment/screens/dashboard/user_profile/user_profile_home_screen.dart/home_profile.dart';
 import 'package:flutter/material.dart';
 
 class EmailSent extends StatefulWidget {
@@ -38,11 +37,7 @@ class _EmailSentState extends State<EmailSent> {
               const Spacer(),
               RoundButton(
                 press: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const ProfileHeader(),
-                    ),
-                  );
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                 },
                 title: "Done",
               )

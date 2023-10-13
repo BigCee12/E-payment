@@ -1,4 +1,5 @@
 import 'package:epaymment/components/custom_button.dart';
+import 'package:epaymment/constants/colors.dart';
 // import 'package:epaymment/constants/colors.dart';
 import 'package:epaymment/screens/dashboard/user_profile/account_info/account_info_model/accout_info_model.dart';
 import 'package:flutter/material.dart';
@@ -62,12 +63,33 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                               children: [
                                 Text(key),
                                 TextFormField(
+                                  decoration: InputDecoration(
+                                    border: UnderlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderSide: const BorderSide(
+                                          color: Colors.transparent),
+                                    ),
+
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderSide: const BorderSide(
+                                          color: Colors
+                                              .transparent), // Set border color to transparent
+                                    ),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderSide: const BorderSide(
+                                          color: Colors
+                                              .transparent), // Set border color to transparent
+                                    ),
+                                    filled: true, // Fill the background
+                                    fillColor: CustomColors.containerBG,
+                                  ),
                                   initialValue: value,
                                   onChanged: (val) {
                                     Map<String, dynamic> data =
                                         updatedData.toMapDisplay();
                                     data[key] = val;
-
                                     // Update the data in the updatedData when the user edits
                                     updatedData =
                                         AccountInfoModel.fromMapDisplay(data);
