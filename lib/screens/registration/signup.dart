@@ -39,7 +39,7 @@ class LoginAppState extends State<SignUp> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Welcome back, Sign in to your account.',
+                  'Lets create your account.',
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
