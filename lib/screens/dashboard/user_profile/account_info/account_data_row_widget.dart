@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:epaymment/constants/colors.dart';
 
 class AccountWidget extends StatelessWidget {
-  
   final String title;
-  final  String subtitle;
+  final String? subtitle;
+  final Widget? customSubtitle;
 
   const AccountWidget({
     Key? key,
-     required this.title, required this.subtitle,
+    required this.title,
+    this.subtitle,
+    this.customSubtitle,
   }) : super(key: key);
 
   @override
@@ -22,21 +24,23 @@ class AccountWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-           title,
+            title,
             style: const TextStyle(
               color: CustomColors.dividerColor,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(
-            subtitle,
+          if (subtitle != null)
+            Text(
+            subtitle!,
             style: const TextStyle(
               color: CustomColors.elevatedButtons,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
+           if (customSubtitle != null) ...[customSubtitle!],
         ],
       ),
     );

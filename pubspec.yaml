@@ -47,6 +47,8 @@ dependencies:
   intl: ^0.18.1
   flutter_launcher_icons: ^0.13.1
   flutter_share: ^2.0.0
+  country_list_pick: ^1.0.1+6
+  country_list_picker: ^1.0.2
  
   
 
@@ -75,21 +77,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/loading_icon.png
-    - assets/images/first_ig.png
-    - assets/images/cards.jpg
-    - assets/images/card_1.jpg
-    - assets/images/card_2.jpg
-    - assets/images/card_3.jpg
-    - assets/images/choose_card.jpg
-    - assets/images/second_page.png
-    - assets/animations/face_scan_animation.json
-    - assets/animations/animation_ln200vkt.json
-    - assets/images/1696242977196.jpg
-    - assets/images/1696244629298.jpg
-    - assets/images/1696932759462.jpg
-    - assets/images/1697118985681.jpg
-    #- images/a_dot_ham.jpeg animation_ln200vkt
+    - assets/animations/
+    - assets/images/
 
 
 flutter_launcher_icons:

@@ -124,11 +124,16 @@ class SignInState extends State<SignIn> {
               ),
               const Row(
                 children: [
-                  GoogleOrAppleLogin(icon: Icons.touch_app),
                   SizedBox(
-                    width: 20,
+                    width: 40,
                   ),
-                  GoogleOrAppleLogin(icon: Icons.ios_share),
+                  GoogleOrAppleLogin(
+                    imagePath: "assets/images/google_icon.png",
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  GoogleOrAppleLogin(imagePath: "assets/images/apple_logo.png"),
                 ],
               ),
               const SizedBox(

@@ -15,6 +15,8 @@ class AccountInfo extends StatefulWidget {
 }
 
 class _AccountInfoState extends State<AccountInfo> {
+  bool isSwitched = false;
+
   AccountInfoModel accountdata = AccountInfoModel(
     name: "Tommy Jason",
     phoneNumber: "1234456646464",
@@ -115,8 +117,17 @@ class _AccountInfoState extends State<AccountInfo> {
                       subtitle: accountdata.employer,
                     ),
                     AccountWidget(
-                      title: "Employer",
-                      subtitle: accountdata.employer,
+                      title: "U.S Citizen",
+                      customSubtitle: Switch(
+                        value: isSwitched,
+                        onChanged: (value) {
+                          setState(() {
+                            isSwitched = value;
+                          });
+                        },
+                        activeTrackColor: CustomColors.elevatedButtons,
+                        activeColor: CustomColors.textColor,
+                      ),
                     ),
                   ],
                 ),
@@ -165,7 +176,7 @@ class _AccountInfoState extends State<AccountInfo> {
               ),
             ),
             const SizedBox(
-              height: 60,
+              height: 40,
             ),
             RoundButton(
               press: () async {

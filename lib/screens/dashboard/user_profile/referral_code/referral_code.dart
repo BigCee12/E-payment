@@ -162,16 +162,20 @@ class _ReferralCodeWidgetState extends State<ReferralCodeWidget> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              const SizedBox(height: 60,),
+              const SizedBox(
+                height: 60,
+              ),
               const Padding(
-                padding:  EdgeInsets.all(8.0),
-                child:  Row(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
                   children: [
-                    GoogleOrAppleLogin(icon: Icons.touch_app),
+                    GoogleOrAppleLogin(
+                        imagePath: "assets/images/google_icon.png"),
                     SizedBox(
                       width: 20,
                     ),
-                    GoogleOrAppleLogin(icon: Icons.ios_share),
+                    GoogleOrAppleLogin(
+                        imagePath: "assets/images/apple_logo.png"),
                   ],
                 ),
               ),

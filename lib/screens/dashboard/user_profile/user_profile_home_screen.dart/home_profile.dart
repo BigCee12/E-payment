@@ -3,6 +3,7 @@ import 'package:epaymment/screens/dashboard/user_profile/account_info/account_in
 import 'package:epaymment/screens/dashboard/user_profile/change_passsword/change_password.dart';
 import 'package:epaymment/screens/dashboard/user_profile/faqs/faqs.dart';
 import 'package:epaymment/screens/dashboard/user_profile/general_settings/general_settings.dart';
+import 'package:epaymment/screens/dashboard/user_profile/languages/languages.dart';
 import 'package:epaymment/screens/dashboard/user_profile/referral_code/referral_code.dart';
 import 'package:epaymment/screens/dashboard/user_profile/user_profile_home_screen.dart/user_profile_model/user_profile_model.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,14 @@ class ProfileHeader extends StatelessWidget {
               icon: Icons.people_alt_sharp,
               text: "Contact List",
             ),
-            const ProfileRow(
+            ProfileRow(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const LanguageScreen(),
+                  ),
+                );
+              },
               iconColor: Colors.deepPurple,
               iconSize: 34,
               icon: Icons.language,
@@ -126,8 +134,11 @@ class ProfileHeader extends StatelessWidget {
             ),
             ProfileRow(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const GeneralSettings()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const GeneralSettings(),
+                  ),
+                );
               },
               iconColor: const Color.fromARGB(255, 22, 182, 203),
               iconSize: 34,
